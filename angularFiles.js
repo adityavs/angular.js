@@ -14,6 +14,8 @@ var angularFiles = {
 
     'src/ng/anchorScroll.js',
     'src/ng/animate.js',
+    'src/ng/animateRunner.js',
+    'src/ng/animateCss.js',
     'src/ng/browser.js',
     'src/ng/cacheFactory.js',
     'src/ng/compile.js',
@@ -25,12 +27,14 @@ var angularFiles = {
     'src/ng/httpBackend.js',
     'src/ng/interpolate.js',
     'src/ng/interval.js',
+    'src/ng/locale.js',
     'src/ng/location.js',
     'src/ng/log.js',
     'src/ng/parse.js',
     'src/ng/q.js',
     'src/ng/raf.js',
     'src/ng/rootScope.js',
+    'src/ng/rootElement.js',
     'src/ng/sanitizeUri.js',
     'src/ng/sce.js',
     'src/ng/sniffer.js',
@@ -75,11 +79,14 @@ var angularFiles = {
     'src/ng/directive/script.js',
     'src/ng/directive/select.js',
     'src/ng/directive/style.js',
-    'src/ng/directive/validators.js'
+    'src/ng/directive/validators.js',
+    'src/angular.bind.js',
+    'src/publishExternalApis.js',
+    'src/ngLocale/angular-locale_en-us.js'
   ],
 
   'angularLoader': [
-    'stringify.js',
+    'src/stringify.js',
     'src/minErr.js',
     'src/loader.js'
   ],
@@ -87,7 +94,6 @@ var angularFiles = {
   'angularModules': {
     'ngAnimate': [
       'src/ngAnimate/shared.js',
-      'src/ngAnimate/body.js',
       'src/ngAnimate/rafScheduler.js',
       'src/ngAnimate/animateChildrenDirective.js',
       'src/ngAnimate/animateCss.js',
@@ -95,8 +101,8 @@ var angularFiles = {
       'src/ngAnimate/animateJs.js',
       'src/ngAnimate/animateJsDriver.js',
       'src/ngAnimate/animateQueue.js',
-      'src/ngAnimate/animateRunner.js',
       'src/ngAnimate/animation.js',
+      'src/ngAnimate/ngAnimateSwap.js',
       'src/ngAnimate/module.js'
     ],
     'ngCookies': [
@@ -113,6 +119,10 @@ var angularFiles = {
     ],
     'ngMessages': [
       'src/ngMessages/messages.js'
+    ],
+    'ngParseExt': [
+      'src/ngParseExt/ucd.js',
+      'src/ngParseExt/module.js'
     ],
     'ngResource': [
       'src/ngResource/resource.js'
@@ -179,28 +189,27 @@ var angularFiles = {
     'bower_components/jquery/dist/jquery.js',
     'test/jquery_remove.js',
     '@angularSrc',
-    'src/publishExternalApis.js',
     '@angularSrcModules',
     '@angularScenario',
-    '@angularTest',
-    'src/ngLocale/angular-locale_en-us.js'  // we need an ngLocale module
+    '@angularTest'
   ],
 
   'karmaExclude': [
     'test/jquery_alias.js',
     'src/angular-bootstrap.js',
-    'src/ngScenario/angular-bootstrap.js'
+    'src/ngScenario/angular-bootstrap.js',
+    'src/angular.bind.js'
   ],
 
   'karmaScenario': [
     'build/angular-scenario.js',
-    'build/docs/docs-scenario.js',
-    'src/ngLocale/angular-locale_en-us.js'  // we need an ngLocale module
+    'build/docs/docs-scenario.js'
   ],
 
   "karmaModules": [
     'build/angular.js',
-    '@angularSrcModules',,
+    '@angularSrcModules',
+    'test/modules/no_bootstrap.js',
     'src/ngScenario/browserTrigger.js',
     'test/helpers/*.js',
     'test/ngMessageFormat/*.js',
@@ -210,26 +219,32 @@ var angularFiles = {
     'test/ngResource/*.js',
     'test/ngSanitize/**/*.js',
     'test/ngTouch/**/*.js',
-    'test/ngAria/*.js',
-    'src/ngLocale/angular-locale_en-us.js'  // we need an ngLocale module
+    'test/ngAria/*.js'
   ],
 
   'karmaJquery': [
     'bower_components/jquery/dist/jquery.js',
     'test/jquery_alias.js',
     '@angularSrc',
-    'src/publishExternalApis.js',
     '@angularSrcModules',
     '@angularScenario',
-    '@angularTest',
-    'src/ngLocale/angular-locale_en-us.js'  // we need an ngLocale module
+    '@angularTest'
+  ],
 
+  'karmaJqueryOld': [
+    'bower_components/jquery-2.1/dist/jquery.js',
+    'test/jquery_alias.js',
+    '@angularSrc',
+    '@angularSrcModules',
+    '@angularScenario',
+    '@angularTest'
   ],
 
   'karmaJqueryExclude': [
     'src/angular-bootstrap.js',
     'src/ngScenario/angular-bootstrap.js',
-    'test/jquery_remove.js'
+    'test/jquery_remove.js',
+    'src/angular.bind.js'
   ]
 };
 
